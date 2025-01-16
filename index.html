@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Two Columns</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Staatliches;
+        }
+
+        /* Body Style */
+        body {
+            font-size: 45px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        /* Column */
+        .column {
+            flex: 1 1 50%;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px;
+            margin: 0;
+            border: 7px solid #fff;
+        }
+
+        /* Top Left Image */
+        .column img.image-left {
+            position: absolute;
+            top: 0px;
+            left: 20px;
+            max-width: 90%;
+            height: auto;
+        }
+
+        /* Center Content */
+        .content-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex: 1;
+        }
+
+        .column h2 {
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .column button {
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .column button:hover {
+            background-color: #ffffff;
+        }
+
+        /* Bottom Center Image */
+        .column img.image-centered {
+            align-self: center;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .column {
+                flex: 1 1 100%;
+                height: auto;
+            }
+
+            .column img.image-left {
+                position: static;
+                margin-bottom: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- First Column -->
+        <div class="column" style="background-image: url('/images/fundo_Verde.png');">
+            <img class="image-left" src="/images/logotipo.jpg" alt="Left Image">
+            <div class="content-center">
+                <h2>fishing tours</h2>
+                <a href="http://fishingtrips.zybaoutdoors.com"><button>Explore fishing trips</button></a>
+            </div>
+            <img class="image-centered" src="/images/Fishingtrips.png" alt="Bottom Image">
+        </div>
+
+        <!-- Second Column -->
+        <div class="column" style="background-image: url('/images/fundo_Verde.png');">
+            <img class="image-left" src="/images/logotipo.jpg" alt="Left Image">
+            <div class="content-center">
+                <h2>Birdwatching tours</h2>
+                <a href="http://birdwatching.zybaoutdoors.com"><button>Explore birds tours</button></a>
+            </div>
+            <img class="image-centered" src="/images/Birdtrips.png" alt="Bottom Image">
+        </div>
+    </div>
+</body>
+</html>
